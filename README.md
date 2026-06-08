@@ -176,3 +176,7 @@ source metadata.
 - *What I changed or overrode:* I 
 verified it by checking that distance scores were returned alongside chunk 
 text and source filenames.
+
+## Loom Demo
+https://www.loom.com/share/20a708e530234bb994d1fa665bd4fad9
+
