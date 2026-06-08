@@ -41,11 +41,11 @@ I chose the UT Dallas on-campus and nearby off-campus dining options as my domai
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
 **Chunk size:**
-
+400 Characters
 **Overlap:**
-
+75 characters
 **Reasoning:**
-
+The documents that I have used is a mix of long pages with multiple paragraphs of information and short reviews of dining options. Because there are long pages, I decided to use bigger chunks in order to take into account the longer pages that would require bigger chunks. The 400 characters seems large enough to chunk a complete thought for a longer document. This would also take into account the smaller reviews completely. The 75 character overlap will make sure that any thought from a longer document is incorporated into the chunk and not seperated into two chunks. 
 ---
 
 ## Retrieval Approach
@@ -57,11 +57,11 @@ I chose the UT Dallas on-campus and nearby off-campus dining options as my domai
      support, accuracy on domain-specific text, latency? -->
 
 **Embedding model:**
-
+all-MiniLM-L6-v2 via sentence-transformers
 **Top-k:**
-
+5 chunks per query
 **Production tradeoff reflection:**
-
+Some tradeoffs that would be considered is the accuracy, multilingual support, and context length. The text-embedding-3-small has seen to be more likely to retrieve more relevant chunks. As for multilingual support, becauase UTD has a large international student population, the multilingual model would help with translating responses to make the information more accessible. The all-MiniLM-L6-v2 can support the 400 characker chunks. 
 ---
 
 ## Evaluation Plan
@@ -71,13 +71,13 @@ I chose the UT Dallas on-campus and nearby off-campus dining options as my domai
      is right or wrong. "What are good dining halls?" is too vague.
      "What do students say about wait times at [dining hall name] during lunch?" is testable. -->
 
-| # | Question | Expected answer |
-|---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| # | Question |                                     Expected answer |
+|---|----------|--------------------------------------------------|
+| 1 | What dining options are  at the Student Union?| |Panda Express, Crave, Kalachandji's Express, Chick-fil-A, Firehouse Subs, Halal Shack
+| 2 |What times are the dining hall open on monday ? | |7:30 - 9am, 11am to 2pm, 5pm to 8pm
+| 3 |Can students use their meal plan at off-campus restaurants? | |UT dallas students generally cannot use their meal plan sqipes at off-campus resturants
+| 4 |What do students say about wait times at the UTD Dining options at Student Union ?| | Students Union dining options wait times are heavy around noon rush as well as the Starbucks lines can exceed 15 minutes. 
+| 5 | What are student opinion on the overall food quality at UTD?|some students find it acceptable, others complain about the lack of variety of options |
 
 ---
 
@@ -87,9 +87,9 @@ I chose the UT Dallas on-campus and nearby off-campus dining options as my domai
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. Noisy inconsistent documents - The pages such as Yelp, Facebook, Reddit can contain lots of text that is not directly related to the domain. This might pollute the retrieval results if the extra text is used out of context. 
 
-2.
+2.Chuncks that split key information across boundaries - Information like the dining option hours will change depending on how you chunk the information. If the chunks are a few characters off, it can result in the timings being incorrect when displaying the information to the user. 
 
 ---
 
