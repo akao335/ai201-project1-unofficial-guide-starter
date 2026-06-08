@@ -22,14 +22,14 @@ I chose the UT Dallas on-campus and nearby off-campus dining options as my domai
 |---|---------------------------|----------------------------|-----------------|
 | 1 | UTD Campus Dining Services|Main university dining page |https://services.utdallas.edu/dining/ |
 | 2 |UTD Student Union           |Student Union food listings |https://union.utdallas.edu/facilities/dining/ |
-| 3 |UTD DIning page             | UTD dining page hours|     |https://dineoncampus.com/utdallasdining
+| 3 |UTD DIning page             | UTD dining page hours    |https://dineoncampus.com/utdallasdining
 | 4 |UTD Housing reccomendations |UTD Housing Recommendations |https://housing.utdallas.edu/resources/move-in/lodging-and-restaurants/ |
-| 5 |Yelp |                      |Student Union Reviews        |https://www.yelp.com/biz/student-union-dining-hall-richardson
-| 6 | Reddit |                    |Meal plan Thread            |https://www.reddit.com/r/utdallas/search/?q=meal+plan&sort=top
-| 7 | Reddit |                     |Food recommendations |     https://www.reddit.com/r/utdallas/search/?q=food&sort=top
-| 8 | Wanderlog|                   |Northside Drafthouse |    https://wanderlog.com/place/details/8042138/northside-drafthouse--eatery
-| 9 |Facebook |                    |UTD Dining Updates      |https://www.facebook.com/UTDallasDining/
-| 10 | UTD Dining|                 |General Information |  https://dineoncampus.com/utdallasdining/general-information
+| 5 |Yelp                      |Student Union Reviews        |https://www.yelp.com/biz/student-union-dining-hall-richardson
+| 6 | Reddit                     |Meal plan Thread            |https://www.reddit.com/r/utdallas/search/?q=meal+plan&sort=top
+| 7 | Reddit                     |Food recommendations |     https://www.reddit.com/r/utdallas/search/?q=food&sort=top
+| 8 | Wanderlog                  |Northside Drafthouse |    https://wanderlog.com/place/details/8042138/northside-drafthouse--eatery
+| 9 |Facebook                   |UTD Dining Updates      |https://www.facebook.com/UTDallasDining/
+| 10 | UTD Dining              |General Information |  https://dineoncampus.com/utdallasdining/general-information
 
 ---
 
@@ -73,10 +73,10 @@ Some tradeoffs that would be considered is the accuracy, multilingual support, a
 
 | # | Question |                                     Expected answer |
 |---|----------|--------------------------------------------------|
-| 1 | What dining options are  at the Student Union?| |Panda Express, Crave, Kalachandji's Express, Chick-fil-A, Firehouse Subs, Halal Shack
-| 2 |What times are the dining hall open on monday ? | |7:30 - 9am, 11am to 2pm, 5pm to 8pm
-| 3 |Can students use their meal plan at off-campus restaurants? | |UT dallas students generally cannot use their meal plan sqipes at off-campus resturants
-| 4 |What do students say about wait times at the UTD Dining options at Student Union ?| | Students Union dining options wait times are heavy around noon rush as well as the Starbucks lines can exceed 15 minutes. 
+| 1 | What dining options are  at the Student Union? |Panda Express, Crave, Kalachandji's Express, Chick-fil-A, Firehouse Subs, Halal Shack
+| 2 |What times are the dining hall open on monday ? |7:30 - 9am, 11am to 2pm, 5pm to 8pm
+| 3 |Can students use their meal plan at off-campus restaurants? |UT dallas students generally cannot use their meal plan sqipes at off-campus resturants
+| 4 |What do students say about wait times at the UTD Dining options at Student Union ? | Students Union dining options wait times are heavy around noon rush as well as the Starbucks lines can exceed 15 minutes. 
 | 5 | What are student opinion on the overall food quality at UTD?|some students find it acceptable, others complain about the lack of variety of options |
 
 ---
@@ -100,7 +100,25 @@ Some tradeoffs that would be considered is the accuracy, multilingual support, a
      Label each stage with the tool or library you're using.
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
-
+[.txt files in /documents]
+|
+v
+[Ingestion + Cleaning] — os, re
+|
+v
+[Chunking] — custom chunk_text(), 400 chars, 80 overlap
+|
+v
+[Embedding + Vector Store] — all-MiniLM-L6-v2, ChromaDB
+|
+v
+[Retrieval] — ChromaDB query(), top-5
+|
+v
+[Generation] — Groq llama-3.3-70b-versatile
+|
+v
+[Gradio UI] — http://localhost:7860
 ---
 
 ## AI Tool Plan
@@ -116,7 +134,27 @@ Some tradeoffs that would be considered is the accuracy, multilingual support, a
      with my specified chunk size and overlap" is a plan. -->
 
 **Milestone 3 — Ingestion and chunking:**
+- AI tool: Claude
+- Input provided: Documents section (file names) + Chunking Strategy section 
+  (400 chars, 80 overlap) + list of noise to remove (HTML, URLs, Reddit vote 
+  counts, boilerplate nav lines)
+- Expected output: ingest.py with load_documents() and chunk_text() functions
+- Verified by: printing 5 sample chunks and confirming each was readable, 
+  self-contained, and free of HTML or nav artifacts
 
 **Milestone 4 — Embedding and retrieval:**
+- AI tool: Claude
+- Input provided: Retrieval Approach section (all-MiniLM-L6-v2, top-k=5, 
+  ChromaDB) + pipeline diagram + chunk format from ingest.py
+- Expected output: embed.py with build_vector_store() and retrieve() functions
+- Verified by: running 3 test queries and checking that returned chunks 
+  visibly related to each query and distance scores were below 0.5
 
 **Milestone 5 — Generation and interface:**
+- AI tool: Claude
+- Input provided: grounding requirement (answer from retrieved context only) + 
+  desired output format (answer + source list) + Gradio skeleton from project spec
+- Expected output: query.py with grounded prompt template + app.py with 
+  working Gradio UI
+- Verified by: asking a question not covered by documents and confirming the 
+  system returned "I don't have enough information" rather than hallucinating

@@ -26,14 +26,14 @@ I chose the UT Dallas on-campus and nearby off-campus dining options as my domai
 |---|---------------------------|----------------------------|-----------------|
 | 1 | UTD Campus Dining Services|Main university dining page |https://services.utdallas.edu/dining/ |
 | 2 |UTD Student Union           |Student Union food listings |https://union.utdallas.edu/facilities/dining/ |
-| 3 |UTD DIning page             | UTD dining page hours|     |https://dineoncampus.com/utdallasdining
+| 3 |UTD Dining page             | UTD dining page hours     |https://dineoncampus.com/utdallasdining
 | 4 |UTD Housing reccomendations |UTD Housing Recommendations |https://housing.utdallas.edu/resources/move-in/lodging-and-restaurants/ |
-| 5 |Yelp |                      |Student Union Reviews        |https://www.yelp.com/biz/student-union-dining-hall-richardson
-| 6 | Reddit |                    |Meal plan Thread            |https://www.reddit.com/r/utdallas/search/?q=meal+plan&sort=top
-| 7 | Reddit |                     |Food recommendations |     https://www.reddit.com/r/utdallas/search/?q=food&sort=top
-| 8 | Wanderlog|                   |Northside Drafthouse |    https://wanderlog.com/place/details/8042138/northside-drafthouse--eatery
-| 9 |Facebook |                    |UTD Dining Updates      |https://www.facebook.com/UTDallasDining/
-| 10 | UTD Dining|                 |General Information |  https://dineoncampus.com/utdallasdining/general-information
+| 5 |Yelp                       |Student Union Reviews        |https://www.yelp.com/biz/student-union-dining-hall-richardson
+| 6 | Reddit                     |Meal plan Thread            |https://www.reddit.com/r/utdallas/search/?q=meal+plan&sort=top
+| 7 | Reddit                     |Food recommendations |     https://www.reddit.com/r/utdallas/search/?q=food&sort=top
+| 8 | Wanderlog                |Northside Drafthouse reviews|    https://wanderlog.com/place/details/8042138/northside-drafthouse--eatery
+| 9 |Facebook                    |UTD Dining Updates      |https://www.facebook.com/UTDallasDining/
+| 10 | UTD Dining               |General Information |  https://dineoncampus.com/utdallasdining/general-information
 
 ---
 
