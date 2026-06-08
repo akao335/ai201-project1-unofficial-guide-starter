@@ -10,7 +10,7 @@
 ## Domain
 
 <!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
-
+I chose the UT Dallas on-campus and nearby off-campus dining options as my domain. This knowledge is valuable because some important information is spread across different websites. These official websites also do not take into account honest student opinions about the food quality, value, or wait times. 
 ---
 
 ## Documents
@@ -18,18 +18,18 @@
 <!-- List your specific sources: URLs, subreddit names, forum threads, or file descriptions.
      Aim for at least 10 sources that together cover different subtopics or perspectives within your domain. -->
 
-| # | Source | Description | URL or location |
-|---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| # | Source                    | Description                 | URL or location |
+|---|---------------------------|----------------------------|-----------------|
+| 1 | UTD Campus Dining Services|Main university dining page |https://services.utdallas.edu/dining/ |
+| 2 |UTD Student Union           |Student Union food listings |https://union.utdallas.edu/facilities/dining/ |
+| 3 |UTD DIning page             | UTD dining page hours|     |https://dineoncampus.com/utdallasdining
+| 4 |UTD Housing reccomendations |UTD Housing Recommendations |https://housing.utdallas.edu/resources/move-in/lodging-and-restaurants/ |
+| 5 |Yelp |                      |Student Union Reviews        |https://www.yelp.com/biz/student-union-dining-hall-richardson
+| 6 | Reddit |                    |Meal plan Thread            |https://www.reddit.com/r/utdallas/search/?q=meal+plan&sort=top
+| 7 | Reddit |                     |Food recommendations |     https://www.reddit.com/r/utdallas/search/?q=food&sort=top
+| 8 | Wanderlog|                   |Northside Drafthouse |    https://wanderlog.com/place/details/8042138/northside-drafthouse--eatery
+| 9 |Facebook |                    |UTD Dining Updates      |https://www.facebook.com/UTDallasDining/
+| 10 | UTD Dining|                 |General Information |  https://dineoncampus.com/utdallasdining/general-information
 
 ---
 
